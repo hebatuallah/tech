@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   
   def find_locations
     #facebook { |fb| fb.get_connection("me", "locations") }
+	# This is static checkins just added to test, the checkins should be getten by: fb.get_connection("me", "locations")
    checkins = 
     [
       {
