@@ -29,4 +29,5 @@ Conskurra::Application.configure do
   
   ENV['FACEBOOK_APP_ID'] = "568401726570579";
   ENV['FACEBOOK_SECRET'] = "9f611754112be11d3e6c910793919a29";
+  ENV['SSL_CERT_FILE'] = "C:/Ruby193/cacert.pem" 
 end
