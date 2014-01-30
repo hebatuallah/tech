@@ -1,1 +1,1 @@
-This sample of read me!
+This repositroy contains the solutions of some problems in different languages: ruby, java, c++ and others

@@ -1,12 +1,18 @@
 == README
 
-This System Run over
-Ruby version: 1.9.3
-Rails version: 4.0.2
+The goal of the task is: 
+getting the locations of a logged in user on  the facebook and displaying them on google map.
+
+To check-out the code, the most important files are 
+user.rb, user_controller.rby and index.html.erb
 
 To run : 
 - Fork it 
 - run the server: rails s
 - request: localhost:3000
 -  Sign-in using facebook account
+
+This System Run over
+Ruby version: 1.9.3
+Rails version: 4.0.2
  
