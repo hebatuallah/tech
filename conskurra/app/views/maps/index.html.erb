@@ -14,12 +14,12 @@
 function initialize() {
 
    var latlong = $('.map').data('marker');
-   var myLatlng= new google.maps.LatLng(latlong.l, latlong.n)
+   var myLatlng= new google.maps.LatLng(32.765, -56.8976)
    var mapOptions = {
     zoom: 4,
     center: myLatlng
   };
-  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);	
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);        
   
   var marker = new google.maps.Marker({
       position: myLatlng,
@@ -42,9 +42,12 @@ window.onload = loadScript;
   </head>
   <body>
     <div id="map-canvas"></div>
-        <% @maps.each do |item| %>
-            <div class="map" data-marker='{"l": <%= item["l"]%> ,"n":<%= item["n"]%> }'></div>
-        <% end%>
-	
+	   <%if current_user %>
+	     <%unless @maps.empty? %>
+          <% @maps.each do |item| %>
+		    <div class="map" data-marker='{"l": <%= item["l"]%> ,"n":<%= item["n"]%> }' > </div>
+		  <%end%> 
+		 <%end%>
+	   <%end %>
   </body>
 </html>
