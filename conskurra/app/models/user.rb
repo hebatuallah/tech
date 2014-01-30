@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   def find_locations
     #facebook { |fb| fb.get_connection("me", "locations") }
 	# This is static checkins just added to test, the checkins should be getten by: fb.get_connection("me", "locations")
+   #checkis = facebook { |fb| fb.fql_query("SELECT latitude, longitude FROM location_post WHERE author_uid = me()") }facebook { |fb| fb.fql_query("SELECT latitude, longitude FROM location_post WHERE author_uid = me()") }
    checkins = 
     [
       {
