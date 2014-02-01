@@ -1,13 +1,11 @@
 function initialize() {
-  var mapOptions = {
-    zoom: 8,
-    center: new google.maps.LatLng(-34.397, 150.644)
+   var myLatlng= new google.maps.LatLng(32.765, -56.8976)
+    mapOptions = {
+    zoom: 4,
+    center: myLatlng
   };
-
-  var map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
+   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 }
-
 function loadScript() {
   var script = document.createElement('script');
   script.type = 'text/javascript';
@@ -15,5 +13,15 @@ function loadScript() {
       'callback=initialize';
   document.body.appendChild(script);
 }
-
+function  loadLocations() {
+    $("#my-div").children('.map').each(function  () {
+      var loc = JSON.parse($(this).attr("data-marker"));
+      console.log(loc);
+      var myLatlng= new google.maps.LatLng(loc.l, loc.n);
+      var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map
+      });
+    });
+  }  
 window.onload = loadScript;

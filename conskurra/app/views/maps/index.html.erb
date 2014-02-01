@@ -1,6 +1,5 @@
 <html>
   <head>
-    <title>Asynchronous Loading</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
@@ -10,44 +9,18 @@
         padding: 0px
       }
     </style>
-    <script>
-function initialize() {
-
-   var latlong = $('.map').data('marker');
-   var myLatlng= new google.maps.LatLng(32.765, -56.8976)
-   var mapOptions = {
-    zoom: 4,
-    center: myLatlng
-  };
-  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);        
-  
-  var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      title: 'Hello World!'
-  });  
-}
-
-
-function loadScript() {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
-      'callback=initialize';
-  document.body.appendChild(script);
-}
-
-window.onload = loadScript;
- </script>
   </head>
   <body>
+    <button id="my_button" onclick="loadLocations()">Load Locations</button>
     <div id="map-canvas"></div>
-	   <%if current_user %>
-	     <%unless @maps.empty? %>
+    <div id="my-div">
+	    <%if current_user %>
+	      <%unless @maps.empty? %>
           <% @maps.each do |item| %>
-		    <div class="map" data-marker='{"l": <%= item["l"]%> ,"n":<%= item["n"]%> }' > </div>
-		  <%end%> 
-		 <%end%>
-	   <%end %>
+		        <div class="map" data-marker='{"l": <%= item["l"]%> ,"n":<%= item["n"]%> }' > </div>
+		      <%end%> 
+		    <%end%>
+      <%end %>
+    </div>
   </body>
 </html>

@@ -7,7 +7,7 @@ To check-out the code, the most important files are
 user.rb, user_controller.rby and index.html.erb
 
 To run : 
-- Fork it 
+- clone it 
 - run the server: rails s
 - request: localhost:3000
 -  Sign-in using facebook account
