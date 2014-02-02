@@ -4,13 +4,15 @@ The goal of the task is:
 getting the locations of a logged in user on  the facebook and displaying them on google map.
 
 To check-out the code, the most important files are 
-user.rb, user_controller.rby and index.html.erb
+user.rb, user_controller.rby,index.html.erb and maps.js
 
 To run : 
-- clone it 
-- run the server: rails s
-- request: localhost:3000
--  Sign-in using facebook account
+- Clone it 
+- Run the server: rails s
+- Request: localhost:3000
+- Sign-in using facebook account
+- Zoom-out the map. 
+- Press "Get Locations" button.(Your checked-in locations should appear on the map).
 
 This System Run over
 Ruby version: 1.9.3
